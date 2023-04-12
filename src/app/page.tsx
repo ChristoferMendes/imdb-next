@@ -1,4 +1,4 @@
-import Result from "./components/Result"
+import Movies from "./components/Movies"
 
 const API_KEY = process.env.API_KEY
 
@@ -8,16 +8,22 @@ interface HomeProps {
   }
 }
 
-export interface Result {
+export interface Movie {
   adult: false
   background_path: string
+  poster_path: string
   id: number;
   title: string;
   original_title: string
+  overview: string
+  name: string
+  release_date: string
+  first_air_date: string
+  vote_count: number
 }
 
 interface Data {
-  results: Result[] | undefined
+  results: Movie[] | undefined
 }
 
 
@@ -38,9 +44,9 @@ export default async function Home({ searchParams }: HomeProps) {
 
   return (
     <div>
-      <h1 className='text-red-900'>
-        {results?.map(result => <Result key={result.id} result={result}/>)}
-      </h1>
+      <div>
+        {results && <Movies movies={results} />}
+      </div>
     </div>
   )
 }
