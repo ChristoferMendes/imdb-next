@@ -2,6 +2,7 @@ import React from 'react'
 import { Movie } from '../page'
 import Link from 'next/link'
 import Image from 'next/image'
+import { FiThumbsUp } from 'react-icons/fi'
 import Rating from './Rating'
 
 export default function Card({ movie }: { movie: Movie }) {

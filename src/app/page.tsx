@@ -23,7 +23,7 @@ export interface Movie {
   vote_average: number;
 }
 
-interface Data {
+export interface MoviesData {
   results: Movie[] | undefined
 }
 
@@ -35,7 +35,7 @@ export default async function Home({ searchParams }: HomeProps) {
     next: { revalidate: 10000 }
   })
 
-  const data = await res.json() as Data;
+  const data = await res.json() as MoviesData;
 
   const { results } = data
 
