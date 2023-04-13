@@ -10,7 +10,7 @@ interface HomeProps {
 
 export interface Movie {
   adult: false
-  background_path: string
+  backdrop_path: string
   poster_path: string
   id: number;
   title: string;
@@ -20,6 +20,7 @@ export interface Movie {
   release_date: string
   first_air_date: string
   vote_count: number
+  vote_average: number;
 }
 
 interface Data {
@@ -41,6 +42,7 @@ export default async function Home({ searchParams }: HomeProps) {
   if (!res.ok) {
     throw new Error('Failed to fetch data')
   }
+
 
   return (
     <div>
