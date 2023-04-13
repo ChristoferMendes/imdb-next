@@ -58,7 +58,7 @@ function Rating({ rating }: RatingProps) {
 
 
   return (
-    <div className='flex items-center'>
+    <div className='flex items-center mb-3'>
       {renderStars(hoverRating > 0 ? hoverRating : ratingSerialized, handleHoverRating)}
       <p className='ml-2'>{ratingSerialized} / 5</p>
     </div>
